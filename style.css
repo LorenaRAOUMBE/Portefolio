@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(120deg, #232526, #414345);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+header {
+    text-align: center;
+    padding: 60px 20px 30px 20px;
+    background: rgba(0,0,0,0.5);
+}
+header h1 {
+    font-size: 2.8em;
+    margin: 0;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s;
+}
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #bdbdbd;
+    animation: fadeInUp 1.2s;
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(34, 34, 34, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+h2 {
+    border-left: 5px solid #00c3ff;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    color: #00c3ff;
+}
+.skills, .projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.skill, .project {
+    background: #292929;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1 1 250px;
+    min-width: 220px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+.skill:hover, .project:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0,195,255,0.2);
+}
+.project-title {
+    font-weight: bold;
+    color: #00c3ff;
+}
+.contact {
+    text-align: center;
+    margin-top: 40px;
+}
+.contact button {
+    background: linear-gradient(90deg, #00c3ff, #3a7bd5);
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.contact button:hover {
+    background: linear-gradient(90deg, #3a7bd5, #00c3ff);
+}
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: #232526;
+    color: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: fadeInModal 0.4s;
+}
+@keyframes fadeInModal {
+    from { opacity: 0; transform: scale(0.8);}
+    to { opacity: 1; transform: scale(1);}
+}
+.close {
+    position: absolute;
+    top: 10px; right: 20px;
+    font-size: 2em;
+    color: #00c3ff;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.close:hover {
+    color: #fff;
+}
+/* Responsive */
+@media (max-width: 700px) {
+    .skills, .projects {
+        flex-direction: column;
+    }
+    .modal-content {
+        padding: 20px 10px;
+    }
+}
