@@ -5,6 +5,15 @@
     --light: #FAFAFB;
     --dark: #12141D;
 }
+.grid-perso{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.element-grid-perso{
+    margin: auto;
+    width: 98%;
+    height: 98%;
+}
 
 .back-to-top {
     position: fixed;
@@ -151,6 +160,21 @@
     border-radius: 50%;
     border: 8px solid #FFC448;
 }
+ul{
+    list-style: none;
+}
+/* Styles pour les icônes de chevron dans la liste */
+.col-lg-6 ul li i.bi-chevron-right {
+    color: rgb(98, 68, 197); 
+    font-size: 1.5em; 
+    margin-right: 8px; 
+    vertical-align: middle;
+}
+
+
+.col-lg-6 ul li strong {
+    margin-right: 5px; 
+}
 
 /*** Skills ***/
 #skill .progress {
@@ -190,6 +214,9 @@
 
 
 /*** Project Portfolio ***/
+h6{
+    padding-top:4px;
+}
 #portfolio-flters li {
     display: inline-block;
     font-weight: 500;
@@ -205,9 +232,6 @@
     border-color: var(--primary);
 }
 
-.icon-btn {
-    position: relative;
-}
 
 .portfolio-btn {
     position: absolute;
@@ -216,32 +240,42 @@
     top: 0;
     left: 0;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-start;
     padding: 10px;
     padding-bottom: 80px !important;
     opacity: 0;
     transition: .5s;
+    border-radius:10px ;
+}
+.portfolio-container {
+    display: flex; /* Assurez-vous que c'est bien un flex container */
+    flex-wrap: wrap; /* Assurez-vous que les éléments s'enroulent */
+    gap: 16px;
+    column-gap: 1rem !important;
 }
 
-.portfolio-item:hover .portfolio-btn {
-    background: rgba(98, 68, 197, 0.493);
+
+.portfolio-item:hover, .portfolio-btn:hover{
+    background: rgba(98, 68, 197, 0.562);
     opacity: 1;
     padding-bottom: 30px !important;
 }
 #contact {
     background-color: rgba(162, 162, 243, 0.116);
 }
+
 .portfolio-item {
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 0 0 20px 0;
+    position: relative;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 0 0 20px 0;
+
 }
-.portfolio-item:hover{
-    background: rgba(98, 68, 197, 0.493);
-  
-}
+
 p,span,h6{
-    padding: 2px 2px 2px 8px ;
+    padding-left: 8px ;
 }
+
+
